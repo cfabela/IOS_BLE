@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		CE59BA4C27BF2D8A00729E1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA4B27BF2D8A00729E1C /* AppDelegate.swift */; };
-		CE59BA4E27BF2D8A00729E1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA4D27BF2D8A00729E1C /* SceneDelegate.swift */; };
 		CE59BA5027BF2D8A00729E1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA4F27BF2D8A00729E1C /* ViewController.swift */; };
 		CE59BA5327BF2D8A00729E1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE59BA5127BF2D8A00729E1C /* Main.storyboard */; };
 		CE59BA5527BF2D8C00729E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE59BA5427BF2D8C00729E1C /* Assets.xcassets */; };
 		CE59BA5827BF2D8C00729E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE59BA5627BF2D8C00729E1C /* LaunchScreen.storyboard */; };
+		CE59BA6027BF2E5300729E1C /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA5F27BF2E5300729E1C /* AppFlowController.swift */; };
+		CE59BA6227BF2FDF00729E1C /* BLECentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA6127BF2FDF00729E1C /* BLECentral.swift */; };
+		CE59BA6427BF3D1200729E1C /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA6327BF3D1200729E1C /* DiscoveryViewController.swift */; };
+		CE59BA6627BF4CF300729E1C /* DiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA6527BF4CF300729E1C /* DiscoveredPeripheral.swift */; };
+		CE59BA6927BF4DD900729E1C /* DiscoveredPeripheralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA6727BF4DD900729E1C /* DiscoveredPeripheralCell.swift */; };
+		CE59BA6A27BF4DD900729E1C /* DiscoveredPeripheralCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE59BA6827BF4DD900729E1C /* DiscoveredPeripheralCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE59BA4827BF2D8A00729E1C /* BLESensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLESensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE59BA4B27BF2D8A00729E1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE59BA4D27BF2D8A00729E1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE59BA4F27BF2D8A00729E1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE59BA5227BF2D8A00729E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE59BA5427BF2D8C00729E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE59BA5727BF2D8C00729E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE59BA5927BF2D8C00729E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE59BA5F27BF2E5300729E1C /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
+		CE59BA6127BF2FDF00729E1C /* BLECentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECentral.swift; sourceTree = "<group>"; };
+		CE59BA6327BF3D1200729E1C /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		CE59BA6527BF4CF300729E1C /* DiscoveredPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredPeripheral.swift; sourceTree = "<group>"; };
+		CE59BA6727BF4DD900729E1C /* DiscoveredPeripheralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredPeripheralCell.swift; sourceTree = "<group>"; };
+		CE59BA6827BF4DD900729E1C /* DiscoveredPeripheralCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveredPeripheralCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				CE59BA4B27BF2D8A00729E1C /* AppDelegate.swift */,
-				CE59BA4D27BF2D8A00729E1C /* SceneDelegate.swift */,
 				CE59BA4F27BF2D8A00729E1C /* ViewController.swift */,
 				CE59BA5127BF2D8A00729E1C /* Main.storyboard */,
 				CE59BA5427BF2D8C00729E1C /* Assets.xcassets */,
 				CE59BA5627BF2D8C00729E1C /* LaunchScreen.storyboard */,
 				CE59BA5927BF2D8C00729E1C /* Info.plist */,
+				CE59BA5F27BF2E5300729E1C /* AppFlowController.swift */,
+				CE59BA6127BF2FDF00729E1C /* BLECentral.swift */,
+				CE59BA6327BF3D1200729E1C /* DiscoveryViewController.swift */,
+				CE59BA6527BF4CF300729E1C /* DiscoveredPeripheral.swift */,
+				CE59BA6727BF4DD900729E1C /* DiscoveredPeripheralCell.swift */,
+				CE59BA6827BF4DD900729E1C /* DiscoveredPeripheralCell.xib */,
 			);
 			path = BLESensor;
 			sourceTree = "<group>";
@@ -126,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE59BA5827BF2D8C00729E1C /* LaunchScreen.storyboard in Resources */,
+				CE59BA6A27BF4DD900729E1C /* DiscoveredPeripheralCell.xib in Resources */,
 				CE59BA5527BF2D8C00729E1C /* Assets.xcassets in Resources */,
 				CE59BA5327BF2D8A00729E1C /* Main.storyboard in Resources */,
 			);
@@ -138,9 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE59BA6027BF2E5300729E1C /* AppFlowController.swift in Sources */,
+				CE59BA6627BF4CF300729E1C /* DiscoveredPeripheral.swift in Sources */,
 				CE59BA5027BF2D8A00729E1C /* ViewController.swift in Sources */,
+				CE59BA6927BF4DD900729E1C /* DiscoveredPeripheralCell.swift in Sources */,
 				CE59BA4C27BF2D8A00729E1C /* AppDelegate.swift in Sources */,
-				CE59BA4E27BF2D8A00729E1C /* SceneDelegate.swift in Sources */,
+				CE59BA6227BF2FDF00729E1C /* BLECentral.swift in Sources */,
+				CE59BA6427BF3D1200729E1C /* DiscoveryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,9 +314,9 @@
 				INFOPLIST_FILE = BLESensor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +326,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,9 +342,9 @@
 				INFOPLIST_FILE = BLESensor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +354,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
