@@ -9,11 +9,12 @@ import UIKit
 
 class DiscoveryViewController: UITableViewController {
   
-  var central: BLECentral!
+  private var central: BLECentral!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    central = BLECentral()
     
     central.onDiscovered = {[weak self] in
       self?.tableView.reloadData()
@@ -22,18 +23,10 @@ class DiscoveryViewController: UITableViewController {
     tableView.register(UINib(nibName: "DiscoveredPeripheralCell", bundle: nil),
                       forCellReuseIdentifier: "DiscoveredPeripheralCell")
   }
-
-    // MARK: - Table view data source
-  override func numberOfSections(in tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
-    return 1
-    
-  }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
     return central.discoveredPeripherals.count
-    
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,5 +41,9 @@ class DiscoveryViewController: UITableViewController {
     cell.rssiLabel.textColor = .red
     
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    central.connect(at: indexPath.row)
   }
 }

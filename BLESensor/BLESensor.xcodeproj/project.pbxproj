@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2EE5DF27C9D46300085A55 /* AccelerometerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE5DE27C9D46300085A55 /* AccelerometerDataSource.swift */; };
+		CE2EE5E127C9D4BC00085A55 /* DeviceAccelerometerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE5E027C9D4BC00085A55 /* DeviceAccelerometerDataSource.swift */; };
+		CE4A061B27C8650600731A45 /* BLERoleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A061A27C8650500731A45 /* BLERoleSelectViewController.swift */; };
 		CE59BA4C27BF2D8A00729E1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA4B27BF2D8A00729E1C /* AppDelegate.swift */; };
 		CE59BA5027BF2D8A00729E1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA4F27BF2D8A00729E1C /* ViewController.swift */; };
 		CE59BA5327BF2D8A00729E1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE59BA5127BF2D8A00729E1C /* Main.storyboard */; };
@@ -18,9 +21,15 @@
 		CE59BA6627BF4CF300729E1C /* DiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA6527BF4CF300729E1C /* DiscoveredPeripheral.swift */; };
 		CE59BA6927BF4DD900729E1C /* DiscoveredPeripheralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BA6727BF4DD900729E1C /* DiscoveredPeripheralCell.swift */; };
 		CE59BA6A27BF4DD900729E1C /* DiscoveredPeripheralCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE59BA6827BF4DD900729E1C /* DiscoveredPeripheralCell.xib */; };
+		CE7AD55427C72889007A236C /* BLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AD55327C72889007A236C /* BLEPeripheral.swift */; };
+		CE7AD55627C72950007A236C /* PeripheralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AD55527C72950007A236C /* PeripheralViewController.swift */; };
+		CE7F59DF27C72D630077928D /* BLEIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F59DE27C72D630077928D /* BLEIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE2EE5DE27C9D46300085A55 /* AccelerometerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerDataSource.swift; sourceTree = "<group>"; };
+		CE2EE5E027C9D4BC00085A55 /* DeviceAccelerometerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAccelerometerDataSource.swift; sourceTree = "<group>"; };
+		CE4A061A27C8650500731A45 /* BLERoleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLERoleSelectViewController.swift; sourceTree = "<group>"; };
 		CE59BA4827BF2D8A00729E1C /* BLESensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLESensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE59BA4B27BF2D8A00729E1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE59BA4F27BF2D8A00729E1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +43,9 @@
 		CE59BA6527BF4CF300729E1C /* DiscoveredPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredPeripheral.swift; sourceTree = "<group>"; };
 		CE59BA6727BF4DD900729E1C /* DiscoveredPeripheralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredPeripheralCell.swift; sourceTree = "<group>"; };
 		CE59BA6827BF4DD900729E1C /* DiscoveredPeripheralCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveredPeripheralCell.xib; sourceTree = "<group>"; };
+		CE7AD55327C72889007A236C /* BLEPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheral.swift; sourceTree = "<group>"; };
+		CE7AD55527C72950007A236C /* PeripheralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralViewController.swift; sourceTree = "<group>"; };
+		CE7F59DE27C72D630077928D /* BLEIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEIdentifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,12 @@
 				CE59BA6527BF4CF300729E1C /* DiscoveredPeripheral.swift */,
 				CE59BA6727BF4DD900729E1C /* DiscoveredPeripheralCell.swift */,
 				CE59BA6827BF4DD900729E1C /* DiscoveredPeripheralCell.xib */,
+				CE7AD55327C72889007A236C /* BLEPeripheral.swift */,
+				CE7AD55527C72950007A236C /* PeripheralViewController.swift */,
+				CE7F59DE27C72D630077928D /* BLEIdentifiers.swift */,
+				CE4A061A27C8650500731A45 /* BLERoleSelectViewController.swift */,
+				CE2EE5DE27C9D46300085A55 /* AccelerometerDataSource.swift */,
+				CE2EE5E027C9D4BC00085A55 /* DeviceAccelerometerDataSource.swift */,
 			);
 			path = BLESensor;
 			sourceTree = "<group>";
@@ -156,10 +174,16 @@
 			files = (
 				CE59BA6027BF2E5300729E1C /* AppFlowController.swift in Sources */,
 				CE59BA6627BF4CF300729E1C /* DiscoveredPeripheral.swift in Sources */,
+				CE2EE5DF27C9D46300085A55 /* AccelerometerDataSource.swift in Sources */,
 				CE59BA5027BF2D8A00729E1C /* ViewController.swift in Sources */,
 				CE59BA6927BF4DD900729E1C /* DiscoveredPeripheralCell.swift in Sources */,
+				CE7F59DF27C72D630077928D /* BLEIdentifiers.swift in Sources */,
 				CE59BA4C27BF2D8A00729E1C /* AppDelegate.swift in Sources */,
+				CE7AD55427C72889007A236C /* BLEPeripheral.swift in Sources */,
 				CE59BA6227BF2FDF00729E1C /* BLECentral.swift in Sources */,
+				CE7AD55627C72950007A236C /* PeripheralViewController.swift in Sources */,
+				CE4A061B27C8650600731A45 /* BLERoleSelectViewController.swift in Sources */,
+				CE2EE5E127C9D4BC00085A55 /* DeviceAccelerometerDataSource.swift in Sources */,
 				CE59BA6427BF3D1200729E1C /* DiscoveryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

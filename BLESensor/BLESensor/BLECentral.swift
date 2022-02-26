@@ -8,10 +8,11 @@
 import Foundation
 import CoreBluetooth
 
-class BLECentral: NSObject, CBCentralManagerDelegate{
+class BLECentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
 
-  var manager: CBCentralManager!
-  var discoveredPeripherals = [DiscoveredPeripheral]()
+  private var manager: CBCentralManager!
+  private(set) var discoveredPeripherals = [DiscoveredPeripheral]()
+  private var connectedPeripheral: CBPeripheral?
   var onDiscovered: (() -> Void)?
   
   
@@ -22,7 +23,14 @@ class BLECentral: NSObject, CBCentralManagerDelegate{
   
   func scanForPeripherals(){
     let options: [String: Any] = [CBCentralManagerScanOptionAllowDuplicatesKey: false]
-    manager.scanForPeripherals(withServices: nil, options: options)
+    manager.scanForPeripherals(withServices: [CBUUID(string: BLEIdentifiers.serviceIdentifier)], options: options)
+  }
+  
+  func connect(at index: Int){
+    guard index >= 0, index < discoveredPeripherals.count else {return}
+    
+    manager.stopScan()
+    manager.connect(discoveredPeripherals[index].peripheral, options: nil)
   }
   
   // MARK: - CBCentralManagerDelegate
@@ -49,4 +57,76 @@ class BLECentral: NSObject, CBCentralManagerDelegate{
     }
     onDiscovered?()
   }
+  
+  // CBCentralManagerDelegate methods
+  func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+    print("central did connect")
+    connectedPeripheral = peripheral
+    connectedPeripheral?.delegate = self
+    connectedPeripheral?.discoverServices([CBUUID(string: BLEIdentifiers.serviceIdentifier)])
+  }
+  
+  func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+    print("central did fail to connect")
+  }
+  // CBCentralManagerDelegate end
+  
+  // CBPeripheralDelegate methods
+  func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+    if let error = error {
+      print("peripheral failed to discover services: \(error.localizedDescription)")
+    }else{
+      peripheral.services?.forEach({service in
+        print("service discovered: \(service)")
+        peripheral.discoverCharacteristics([CBUUID(string: BLEIdentifiers.characteristicIdentifier)], for: service)
+      })
+    }
+  }
+  
+  func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+    if let error = error {
+      print("peripheral failed to discover characteristics: \(error.localizedDescription)")
+    }else{
+      service.characteristics?.forEach({(characteristic) in
+        print("characteristic discovered: \(characteristic)")
+        if characteristic.properties.contains(.notify){
+          peripheral.setNotifyValue(true, for: characteristic)
+        }else if characteristic.properties.contains(.read){
+          peripheral.readValue(for: characteristic)
+        }
+        peripheral.discoverDescriptors(for: characteristic)
+      })
+    }
+  }
+  
+  func peripheral(_ peripheral: CBPeripheral, didDiscoverDescriptorsFor characteristic: CBCharacteristic, error: Error?) {
+    if let error = error {
+      print("peripheral failed to discover descriptor: \(error.localizedDescription)")
+    }else{
+      characteristic.descriptors?.forEach({(descriptor) in
+        print("descriptor discovered: \(descriptor)")
+        peripheral.readValue(for: descriptor)
+      })
+    }
+  }
+  
+  func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+    if let error = error {
+      print("peripheral error updating value for characteristic: \(error.localizedDescription)")
+    }else{
+      print("characterisctic value updated: \(characteristic)")
+    }
+  }
+  
+  func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor: CBDescriptor, error: Error?) {
+    if let error = error {
+      print("peripheral error updating value for descriptor: \(error.localizedDescription)")
+    }else{
+      print("descriptor value updated: \(descriptor)")
+    }
+  }
+  
+  // CBPeripheralDelegate end
+  
+
 }
