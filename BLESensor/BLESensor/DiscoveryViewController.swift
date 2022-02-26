@@ -9,8 +9,8 @@ import UIKit
 
 class DiscoveryViewController: UITableViewController {
   
-  private var central: BLECentral!
-  
+  var central: BLECentral!
+  var onConnected: (() -> Void)?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,6 +18,10 @@ class DiscoveryViewController: UITableViewController {
     
     central.onDiscovered = {[weak self] in
       self?.tableView.reloadData()
+    }
+    
+    central?.onConnected = {[weak self] in
+      self?.onConnected?()
     }
     
     tableView.register(UINib(nibName: "DiscoveredPeripheralCell", bundle: nil),

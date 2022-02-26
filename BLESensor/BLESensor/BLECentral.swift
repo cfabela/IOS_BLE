@@ -13,8 +13,11 @@ class BLECentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
   private var manager: CBCentralManager!
   private(set) var discoveredPeripherals = [DiscoveredPeripheral]()
   private var connectedPeripheral: CBPeripheral?
-  var onDiscovered: (() -> Void)?
+  private let decoder = JSONDecoder()
   
+  var onDiscovered: (() -> Void)?
+  var onDataUpdated: ((AccelerometerData) -> Void)?
+  var onConnected: (() -> Void)?
   
   override init(){
     super.init()
@@ -64,6 +67,7 @@ class BLECentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     connectedPeripheral = peripheral
     connectedPeripheral?.delegate = self
     connectedPeripheral?.discoverServices([CBUUID(string: BLEIdentifiers.serviceIdentifier)])
+    onConnected?()
   }
   
   func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
@@ -115,6 +119,12 @@ class BLECentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
       print("peripheral error updating value for characteristic: \(error.localizedDescription)")
     }else{
       print("characterisctic value updated: \(characteristic)")
+      if let value = characteristic.value{
+        if let accelerometerData = try? decoder.decode(AccelerometerData.self, from: value){
+          print(accelerometerData)
+          onDataUpdated?(accelerometerData)
+        }
+      }
     }
   }
   
@@ -127,6 +137,5 @@ class BLECentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
   }
   
   // CBPeripheralDelegate end
-  
 
 }

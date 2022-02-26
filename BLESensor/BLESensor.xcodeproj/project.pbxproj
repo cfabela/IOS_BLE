@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1AC40827CABA6300A5F21A /* AccelerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1AC40627CABA6300A5F21A /* AccelerometerViewController.swift */; };
+		CE1AC40927CABA6300A5F21A /* AccelerometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1AC40727CABA6300A5F21A /* AccelerometerViewController.xib */; };
 		CE2EE5DF27C9D46300085A55 /* AccelerometerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE5DE27C9D46300085A55 /* AccelerometerDataSource.swift */; };
 		CE2EE5E127C9D4BC00085A55 /* DeviceAccelerometerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE5E027C9D4BC00085A55 /* DeviceAccelerometerDataSource.swift */; };
 		CE4A061B27C8650600731A45 /* BLERoleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A061A27C8650500731A45 /* BLERoleSelectViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1AC40627CABA6300A5F21A /* AccelerometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerViewController.swift; sourceTree = "<group>"; };
+		CE1AC40727CABA6300A5F21A /* AccelerometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccelerometerViewController.xib; sourceTree = "<group>"; };
 		CE2EE5DE27C9D46300085A55 /* AccelerometerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerDataSource.swift; sourceTree = "<group>"; };
 		CE2EE5E027C9D4BC00085A55 /* DeviceAccelerometerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAccelerometerDataSource.swift; sourceTree = "<group>"; };
 		CE4A061A27C8650500731A45 /* BLERoleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLERoleSelectViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				CE4A061A27C8650500731A45 /* BLERoleSelectViewController.swift */,
 				CE2EE5DE27C9D46300085A55 /* AccelerometerDataSource.swift */,
 				CE2EE5E027C9D4BC00085A55 /* DeviceAccelerometerDataSource.swift */,
+				CE1AC40627CABA6300A5F21A /* AccelerometerViewController.swift */,
+				CE1AC40727CABA6300A5F21A /* AccelerometerViewController.xib */,
 			);
 			path = BLESensor;
 			sourceTree = "<group>";
@@ -159,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE59BA5827BF2D8C00729E1C /* LaunchScreen.storyboard in Resources */,
+				CE1AC40927CABA6300A5F21A /* AccelerometerViewController.xib in Resources */,
 				CE59BA6A27BF4DD900729E1C /* DiscoveredPeripheralCell.xib in Resources */,
 				CE59BA5527BF2D8C00729E1C /* Assets.xcassets in Resources */,
 				CE59BA5327BF2D8A00729E1C /* Main.storyboard in Resources */,
@@ -174,6 +181,7 @@
 			files = (
 				CE59BA6027BF2E5300729E1C /* AppFlowController.swift in Sources */,
 				CE59BA6627BF4CF300729E1C /* DiscoveredPeripheral.swift in Sources */,
+				CE1AC40827CABA6300A5F21A /* AccelerometerViewController.swift in Sources */,
 				CE2EE5DF27C9D46300085A55 /* AccelerometerDataSource.swift in Sources */,
 				CE59BA5027BF2D8A00729E1C /* ViewController.swift in Sources */,
 				CE59BA6927BF4DD900729E1C /* DiscoveredPeripheralCell.swift in Sources */,
